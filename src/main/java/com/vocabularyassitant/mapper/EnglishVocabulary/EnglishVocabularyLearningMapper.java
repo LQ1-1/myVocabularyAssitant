@@ -11,7 +11,7 @@ import java.util.List;
 @Mapper
 public interface EnglishVocabularyLearningMapper
 {
-    public Integer updateLearningRecord(EnglishVocabularyLearningRecords learningRecords);
+    public Integer updateLearningRecord(EnglishVocabularyLearningRecords learningRecords);  //mainly use to update the latest learning date
     public Integer addLearningRecord(EnglishVocabularyLearningRecords learningRecords);
 
     public List<EnglishVocabulary> getAllLearningRecords(@Param("uId") String uId);

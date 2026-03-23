@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.vocabularyassitant.mapper.CustomizedVocabularyMapper">
+    <insert id="addCustomizedVocabularyRecord"
+            parameterType="com.vocabularyassitant.entity.CustomizedVocabulary">
+        insert into CustomizeVocabularyTable (cId, vContent, vZh_meaning, nId, lDate)values (#{cId}, #{vContent}, #{vZh_meaning}, #{nId}, #{lDate});
+    </insert>
+    <update id=""
+            parameterType="com.vocabularyassitant.entity.CustomizedVocabulary">
+        update CustomizeVocabularyTable set vContent=#{vContent}, vZh_meaning=#{}, lDate=#{} where cId=#{cId} and nId=#{nId};
+    </update>
+    <delete id="deleteCustomizedVocabularyRecord"
+            parameterType="string">
+        delete from CustomizeVocabularyTable where cId=#{cId} and nId=#{nId};
+    </delete>
+    <select id="getAllCustomizedRecord"
+            parameterType="string"
+            resultType="com.vocabularyassitant.entity.CustomizedVocabulary">
+        select cId, vContent, vZh_meaning, nId, lDate, EXP(-0.8 * DATEDIFF(CURDATE(), lDate)) as retention_value from CustomizeVocabularyTable where nId = #{nId} order by retention_value asc;
+    </select>
+    <select id="getHighPriorityRecordForReview"
+            parameterType="string"
+            resultType="com.vocabularyassitant.entity.CustomizedVocabulary">
+        select cId, vContent, vZh_meaning, nId, lDate, EXP(-0.8 * DATEDIFF(CURDATE(), lDate)) as retention_value from CustomizeVocabularyTable where EXP(-0.8 * DATEDIFF(CURDATE(), lDate)) &lt; 0.4 and nId = #{nId} order by retention_value asc limit 1;
+    </select>
+
+</mapper>

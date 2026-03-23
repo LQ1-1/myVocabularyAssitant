@@ -20,6 +20,6 @@
         <mapper resource="mapper/RefreshTokenMapper.xml"/>
         <mapper resource="mapper/InviteCodeMapper.xml"/>
         <mapper resource="mapper/EnglishVocabulary/EnglishVocabularyMapper.xml"/>
-        <mapper resource="mapper/EnglishVocabulary/EnglishVocabularyLearning.xml"/>
+        <mapper resource="mapper/EnglishVocabulary/EnglishVocabularyLearningMapper.xml"/>
     </mappers>
 </configuration>

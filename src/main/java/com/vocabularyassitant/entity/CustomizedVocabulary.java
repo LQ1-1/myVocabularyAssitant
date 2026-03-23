@@ -3,10 +3,9 @@ package com.vocabularyassitant.entity;
 import lombok.Data;
 
 import java.time.LocalDate;
-import java.util.Date;
 
 @Data
-public class CustomizeVocabulary
+public class CustomizedVocabulary
 {
     private String cId;
     private String vContent;
