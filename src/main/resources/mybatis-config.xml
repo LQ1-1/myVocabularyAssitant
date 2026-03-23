@@ -18,5 +18,8 @@
         <!--注册文件，目的是让 MyBatis 框架能够找到并加载对应的 XML 映射文件-->
         <mapper resource="mapper/UserMapper.xml"/>
         <mapper resource="mapper/RefreshTokenMapper.xml"/>
+        <mapper resource="mapper/InviteCodeMapper.xml"/>
+        <mapper resource="mapper/EnglishVocabulary/EnglishVocabularyMapper.xml"/>
+        <mapper resource="mapper/EnglishVocabulary/EnglishVocabularyLearning.xml"/>
     </mappers>
 </configuration>

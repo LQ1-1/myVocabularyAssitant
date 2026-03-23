@@ -10,4 +10,16 @@
         select * from UserTable where uId=#{uId};
     </select>
 
+    <update id="updateUserInfo">
+        update UserTable set uPassword=#{uPassword}, uName=#{uName}, uStyle=#{uStyle} where uId=#{uId};
+    </update>
+
+    <insert id="addUser"
+            parameterType="com.vocabularyassitant.entity.User">
+        insert into UserTable(uId, uPassword, uName, uStatus, uStyle, uUpdated_at)values(
+        #{uId}, #{uPassword}, #{uName},
+        #{uStatus}, #{uStyle}, #{uUpdated_at}
+        );
+    </insert>
+
 </mapper>

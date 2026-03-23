@@ -2,6 +2,7 @@ package com.vocabularyassitant.entity.EnglishVocabulary;
 
 import lombok.Data;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 @Data
@@ -9,13 +10,13 @@ public class EnglishVocabularyLearningRecords
 {
     private String vId;
     private String uId;
-    private Date lDate;
+    private LocalDate lDate;
 
-    public Date getlDate() {
+    public LocalDate getlDate() {
         return lDate;
     }
 
-    public void setlDate(Date lDate) {
+    public void setlDate(LocalDate lDate) {
         this.lDate = lDate;
     }
 

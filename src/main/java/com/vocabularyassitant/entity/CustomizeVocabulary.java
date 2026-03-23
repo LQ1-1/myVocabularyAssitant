@@ -2,6 +2,7 @@ package com.vocabularyassitant.entity;
 
 import lombok.Data;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 @Data
@@ -11,7 +12,7 @@ public class CustomizeVocabulary
     private String vContent;
     private String vZh_meaning;
     private String nId;
-    private Date lDate;
+    private LocalDate lDate;
 
     public String getcId() {
         return cId;
@@ -21,11 +22,11 @@ public class CustomizeVocabulary
         this.cId = cId;
     }
 
-    public Date getlDate() {
+    public LocalDate getlDate() {
         return lDate;
     }
 
-    public void setlDate(Date lDate) {
+    public void setlDate(LocalDate lDate) {
         this.lDate = lDate;
     }
 

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.vocabularyassitant.mapper.EnglishVocabulary.EnglishVocabularyMapper">
+
+    <select id="learnNewEnglishVocabulary"
+            parameterType="string"
+            resultType="com.vocabularyassitant.mapper.EnglishVocabulary.EnglishVocabularyMapper">
+        select * from EnglishVocabularyTable ET left join EnglishVocabularyLearningRecordsTable ELRT on ET.vId = ELRT.vId and ELRT.uId = #{uId} where ELRT.vId is null order by rand() limit 1;
+    </select>
+
+</mapper>
