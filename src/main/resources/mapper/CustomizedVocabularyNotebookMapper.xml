@@ -3,10 +3,16 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.vocabularyassitant.mapper.CustomizedVocabularyNotebookMapper">
-    <insert id="addCustomizedVocabularyNoteBook"
-            parameterType="com.vocabularyassitant.entity.CustomizedVocabularyNotebook">
-        insert into CustomizedVocabularyNotebookTable (nId, uId, nName, nDescription)values (#{nId}, #{uId}, #{nName}, #{nDescription});
-    </insert>
+    <select id="addCustomizedVocabularyNoteBook"
+            parameterType="com.vocabularyassitant.entity.CustomizedVocabularyNotebook"
+            statementType="CALLABLE">
+        {call insert_customized_vocabulary_notebook(
+        #{uId, mode=IN, jdbcType=VARCHAR},
+        #{nName, mode=IN, jdbcType=VARCHAR},
+        #{nDescription, mode=IN, jdbcType=VARCHAR},
+        #{result, mode=OUT, jdbcType=INTEGER}
+        )}
+    </select>
     <update id="updateCustomizedVocabularyNoteBook"
             parameterType="com.vocabularyassitant.entity.CustomizedVocabularyNotebook">
         update CustomizedVocabularyNotebookTable set nName=#{nName}, nDescription=#{nDescription} where nId=#{nId};
@@ -20,5 +26,9 @@
             resultType="com.vocabularyassitant.entity.CustomizedVocabularyNotebook">
         select * from CustomizedVocabularyNotebookTable where nId=#{nId};
     </select>
-
+    <select id="getUsersAllCustomizedNotebook"
+            parameterType="string"
+            resultType="com.vocabularyassitant.entity.CustomizedVocabularyNotebook">
+        select * from CustomizedVocabularyNotebookTable where uId=#{uId};
+    </select>
 </mapper>

@@ -3,11 +3,18 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.vocabularyassitant.mapper.CustomizedVocabularyMapper">
-    <insert id="addCustomizedVocabularyRecord"
-            parameterType="com.vocabularyassitant.entity.CustomizedVocabulary">
-        insert into CustomizeVocabularyTable (cId, vContent, vZh_meaning, nId, lDate)values (#{cId}, #{vContent}, #{vZh_meaning}, #{nId}, #{lDate});
-    </insert>
-    <update id=""
+    <select id="addCustomizedVocabularyRecord"
+            parameterType="com.vocabularyassitant.entity.CustomizedVocabulary"
+            statementType="CALLABLE">
+        {call insert_customize_vocabulary(
+        #{vContent, mode=IN, jdbcType=VARCHAR},
+        #{vZhMeaning, mode=IN, jdbcType=VARCHAR},
+        #{nId, mode=IN, jdbcType=VARCHAR},
+        #{lDate, mode=IN, jdbcType=DATE},
+        #{result, mode=OUT, jdbcType=INTEGER}
+        )}
+    </select>
+    <update id="updateCustomizedVocabularyRecord"
             parameterType="com.vocabularyassitant.entity.CustomizedVocabulary">
         update CustomizeVocabularyTable set vContent=#{vContent}, vZh_meaning=#{}, lDate=#{} where cId=#{cId} and nId=#{nId};
     </update>
