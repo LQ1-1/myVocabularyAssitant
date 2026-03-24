@@ -6,7 +6,7 @@
 
     <update id="updateLearningRecord"
         parameterType="com.vocabularyassitant.entity.EnglishVocabulary.EnglishVocabularyLearningRecords">
-        update EnglishVocabularyLearningRecordsTable set lDate=#{lDate} where vId=#{vId} and uId=#{uId};
+        update EnglishVocabularyLearningRecordsTable set lDate=CURDATE() where vId=#{vId} and uId=#{uId};
     </update>
 
     <insert id="addLearningRecord"
@@ -15,9 +15,15 @@
     </insert>
 
     <select id="getAllLearningRecords"
-            parameterType="string"
+            parameterType="map"
             resultType="com.vocabularyassitant.entity.EnglishVocabulary.EnglishVocabulary">
-        select ET.*, ELRT.uId, ELRT.lDate, EXP(-0.8 * DATEDIFF(CURDATE(), ELRT.lDate)) as retention_value from EnglishVocabularyLearningRecordsTable ELRT join EnglishVocabularyTable ET on ET.vId = ELRT.vId where ELRT.uId=#{uId} order by retention_value asc;
+        select ET.*, ELRT.uId, ELRT.lDate, EXP(-0.8 * DATEDIFF(CURDATE(), ELRT.lDate)) as retention_value from EnglishVocabularyLearningRecordsTable ELRT join EnglishVocabularyTable ET on ET.vId = ELRT.vId where ELRT.uId=#{uId} order by retention_value asc limit #{limit} offset #{offset};
+    </select>
+
+    <select id="getAllLearningRecordsCount"
+            parameterType="string"
+            resultType="integer">
+        select count(*) from EnglishVocabularyLearningRecordsTable ELRT join EnglishVocabularyTable ET on ET.vId = ELRT.vId where ELRT.uId=#{uId};
     </select>
 
     <select id="getHighPriorityVocabularyForReview"

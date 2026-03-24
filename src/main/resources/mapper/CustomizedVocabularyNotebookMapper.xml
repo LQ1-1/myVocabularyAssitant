@@ -27,8 +27,13 @@
         select * from CustomizedVocabularyNotebookTable where nId=#{nId};
     </select>
     <select id="getUsersAllCustomizedNotebook"
-            parameterType="string"
+            parameterType="map"
             resultType="com.vocabularyassitant.entity.CustomizedVocabularyNotebook">
-        select * from CustomizedVocabularyNotebookTable where uId=#{uId};
+        select * from CustomizedVocabularyNotebookTable where uId=#{uId} limit #{limit} offset #{offset};
+    </select>
+    <select id="getUsersAllCustomizedNotebookCount"
+            parameterType="string"
+            resultType="integer">
+        select count(*) from CustomizedVocabularyNotebookTable where uId=#{uId};
     </select>
 </mapper>

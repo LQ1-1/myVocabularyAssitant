@@ -13,5 +13,6 @@ public interface CustomizedVocabularyNotebookMapper
     public Integer updateCustomizedVocabularyNoteBook(CustomizedVocabularyNotebook customizedVocabularyNotebook);   //need to check the validity of the request
     public Integer deleteCustomizedVocabularyNoteBook(@Param("nId") String nId);    //need to check the validity of the request as well
     public CustomizedVocabularyNotebook getCustomizedVocabularyNotebook(@Param("nId") String nId);  //get information of a specific notebook
-    public List<CustomizedVocabularyNotebook> getUsersAllCustomizedNotebook(@Param("uId") String uId); //get all single user's all notebook
+    public List<CustomizedVocabularyNotebook> getUsersAllCustomizedNotebook(@Param("uId") String uId, @Param("limit") Integer limit, @Param("offset") Integer offset); //get all single user's all notebook
+    public Integer getUsersAllCustomizedNotebookCount(@Param("uId") String uId);
 }

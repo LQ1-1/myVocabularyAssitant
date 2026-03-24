@@ -16,16 +16,32 @@
     </select>
     <update id="updateCustomizedVocabularyRecord"
             parameterType="com.vocabularyassitant.entity.CustomizedVocabulary">
-        update CustomizeVocabularyTable set vContent=#{vContent}, vZh_meaning=#{}, lDate=#{} where cId=#{cId} and nId=#{nId};
+        update CustomizeVocabularyTable
+        <set>
+            <if test="vContent != null and vContent != ''">
+                vContent = #{vContent},
+            </if>
+            <if test="vZhMeaning != null and vZhMeaning != ''">
+                vZh_meaning = #{vZhMeaning},
+            </if>
+            lDate = CURDATE()
+        </set>
+        where cId = #{cId}
+        and nId = #{nId}
     </update>
     <delete id="deleteCustomizedVocabularyRecord"
             parameterType="string">
         delete from CustomizeVocabularyTable where cId=#{cId} and nId=#{nId};
     </delete>
     <select id="getAllCustomizedRecord"
-            parameterType="string"
+            parameterType="map"
             resultType="com.vocabularyassitant.entity.CustomizedVocabulary">
-        select cId, vContent, vZh_meaning, nId, lDate, EXP(-0.8 * DATEDIFF(CURDATE(), lDate)) as retention_value from CustomizeVocabularyTable where nId = #{nId} order by retention_value asc;
+        select cId, vContent, vZh_meaning, nId, lDate, EXP(-0.8 * DATEDIFF(CURDATE(), lDate)) as retention_value from CustomizeVocabularyTable where nId = #{nId} order by retention_value asc limit #{limit} offset #{offset};
+    </select>
+    <select id="getAllCustomizedRecordCount"
+            parameterType="string"
+            resultType="integer">
+        select count(*) from CustomizeVocabularyTable where nId = #{nId};
     </select>
     <select id="getHighPriorityRecordForReview"
             parameterType="string"
