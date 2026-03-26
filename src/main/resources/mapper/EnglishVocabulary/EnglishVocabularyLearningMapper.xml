@@ -14,6 +14,11 @@
         insert into EnglishVocabularyLearningRecordsTable (vId, uId, lDate,) values(#{vId}, #{uId}, #{lDate});
     </insert>
 
+    <delete id="deleteLearningRecords"
+            parameterType="string">
+        delete from EnglishVocabularyLearningRecordsTable where vId=#{vId} and uId=#{uId};
+    </delete>
+
     <select id="getAllLearningRecords"
             parameterType="map"
             resultType="com.vocabularyassitant.entity.EnglishVocabulary.EnglishVocabulary">
