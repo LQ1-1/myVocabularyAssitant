@@ -237,7 +237,36 @@ END$$
 
 DELIMITER ;
 
-aaa
+create table LiveActivitySessionTable
+(
+    activityId varchar(128) primary key comment 'iOS Live Activity id',
+    uId varchar(32) not null comment '所属用户',
+    pushToken varchar(512) not null unique comment '该 Live Activity 的 push token',
+    status int not null default 1 comment '1=active, 0=ended',
+    startedAt datetime not null default current_timestamp,
+    lastPushedAt datetime null,
+    expiresAt datetime null,
+    updatedAt datetime not null default current_timestamp on update current_timestamp,
+    constraint fk_LiveActivitySessionTable_uId foreign key (uId) references UserTable(uId),
+    index idx_LiveActivitySessionTable_uId(uId),
+    index idx_LiveActivitySessionTable_status(status)
+);
+
+create table PushLogTable
+(
+    pId varchar(64) primary key,
+    uId varchar(32) not null,
+    activityId varchar(128) not null,
+    wordId varchar(32),
+    pushType varchar(32) not null,
+    pushStatus int not null comment '1=success, 0=failed',
+    responseMessage varchar(2048),
+    createdAt datetime not null default current_timestamp,
+    index idx_PushLogTable_uId(uId),
+    index idx_PushLogTable_activityId(activityId)
+);
+
+
 
 
 -- drop procedure insert_customized_vocabulary_notebook;
