@@ -76,6 +76,46 @@ constraint fk_UserTable_uId foreign key(uId) references UserTable(uId),
 CONSTRAINT pk_EnglishVocabularyLearningRecordsTable PRIMARY KEY (vId, uId),
 index idx_EnglishVocabularyLearningRecordsTable_uId(uId)
 );
+create table EnglishVocabularyNeworReviewCountTable
+(
+uId varchar(32),
+pDate date not null,
+cNew int comment'今日新学词数' default 0,
+cReview int comment'今日复习词数' default 0,
+constraint fk_EnglishVocabularyNeworReviewCountTable_uId foreign key(uId) references UserTable(uId),
+constraint pk_EnglishVocabularyNeworReviewCountTable primary key(uId, pDate),
+index idx_EnglishVocabularyNeworReviewCountTable_uId(uId)
+);
+DELIMITER $$
+
+create procedure sp_add_new_count(
+    in p_uId varchar(32),
+    in p_pDate date
+)
+begin
+    insert into EnglishVocabularyNeworReviewCountTable (uId, pDate, cNew, cReview)
+    values (p_uId, p_pDate, 1, 0)
+    on duplicate key update
+        cNew = cNew + 1;
+end $$
+
+DELIMITER ;
+DELIMITER $$
+
+create procedure sp_add_review_count(
+    in p_uId varchar(32),
+    in p_pDate date
+)
+begin
+    insert into EnglishVocabularyNeworReviewCountTable (uId, pDate, cNew, cReview)
+    values (p_uId, p_pDate, 0, 1)
+    on duplicate key update
+        cReview = cReview + 1;
+end $$
+
+DELIMITER ;
+
+
 
 select * from EnglishVocabularyTable ET left join EnglishVocabularyLearningRecordsTable ELRT on ET.vId = ELRT.vId where ELRT.vId is not null limit 100;
 select * from EnglishVocabularyTable ET left join EnglishVocabularyLearningRecordsTable ELRT on ET.vId = ELRT.vId where ELRT.vId is null limit 100;
