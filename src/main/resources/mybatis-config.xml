@@ -21,7 +21,7 @@
         <mapper resource="mapper/InviteCodeMapper.xml"/>
         <mapper resource="mapper/EnglishVocabulary/EnglishVocabularyMapper.xml"/>
         <mapper resource="mapper/EnglishVocabulary/EnglishVocabularyLearningMapper.xml"/>
-        <mapper resource="mapper/LiveActivitySessionMapper.xml"/>
+        <mapper resource="mapper/AndroidPushDeviceMapper.xml"/>
         <mapper resource="mapper/CustomizedVocabularyMapper.xml"/>
         <mapper resource="mapper/CustomizedVocabularyNotebookMapper.xml"/>
     </mappers>

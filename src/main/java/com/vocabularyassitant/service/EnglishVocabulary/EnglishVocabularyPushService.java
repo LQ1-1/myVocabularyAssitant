@@ -12,6 +12,10 @@ public class EnglishVocabularyPushService
 
     public EnglishVocabulary pickNextWord(String uId)
     {
-
+        EnglishVocabulary vocabulary = englishVocabularyService.learnNewEnglishVocabulary(uId);
+        if (vocabulary != null) {
+            return vocabulary;
+        }
+        return englishVocabularyService.getRandomEnglishVocabulary();
     }
 }

@@ -6,8 +6,13 @@
 
     <select id="learnNewEnglishVocabulary"
             parameterType="string"
-            resultType="com.vocabularyassitant.mapper.EnglishVocabulary.EnglishVocabularyMapper">
+            resultType="com.vocabularyassitant.entity.EnglishVocabulary.EnglishVocabulary">
         select * from EnglishVocabularyTable ET left join EnglishVocabularyLearningRecordsTable ELRT on ET.vId = ELRT.vId and ELRT.uId = #{uId} where ELRT.vId is null order by rand() limit 1;
+    </select>
+
+    <select id="getRandomEnglishVocabulary"
+            resultType="com.vocabularyassitant.entity.EnglishVocabulary.EnglishVocabulary">
+        select * from EnglishVocabularyTable order by rand() limit 1;
     </select>
 
 </mapper>

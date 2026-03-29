@@ -277,34 +277,43 @@ END$$
 
 DELIMITER ;
 
-create table LiveActivitySessionTable
+create table AndroidPushDeviceTable
 (
-    activityId varchar(128) primary key comment 'iOS Live Activity id',
+    deviceId varchar(128) primary key comment '设备唯一标识',
     uId varchar(32) not null comment '所属用户',
-    pushToken varchar(512) not null unique comment '该 Live Activity 的 push token',
-    status int not null default 1 comment '1=active, 0=ended',
-    startedAt datetime not null default current_timestamp,
-    lastPushedAt datetime null,
-    expiresAt datetime null,
+    fcmToken varchar(512) not null comment 'Firebase registration token',
+    status int not null default 1 comment '1=active, 0=inactive',
+    lastPushedAt datetime null comment '最近一次推送时间',
+    createdAt datetime not null default current_timestamp,
     updatedAt datetime not null default current_timestamp on update current_timestamp,
-    constraint fk_LiveActivitySessionTable_uId foreign key (uId) references UserTable(uId),
-    index idx_LiveActivitySessionTable_uId(uId),
-    index idx_LiveActivitySessionTable_status(status)
+    constraint fk_AndroidPushDeviceTable_uId
+        foreign key (uId) references UserTable(uId)
+        on delete cascade
+        on update cascade,
+    index idx_AndroidPushDeviceTable_uId(uId),
+    index idx_AndroidPushDeviceTable_status(status)
 );
+alter table AndroidPushDeviceTable
+add unique key uk_AndroidPushDeviceTable_fcmToken (fcmToken);
+alter table AndroidPushDeviceTable
+add column deviceType varchar(32) default 'android' comment '设备平台',
+add column appVersion varchar(64) null comment 'App版本';
 
-create table PushLogTable
+create table AndroidPushLogTable
 (
     pId varchar(64) primary key,
+    deviceId varchar(128) not null,
     uId varchar(32) not null,
-    activityId varchar(128) not null,
-    wordId varchar(32),
-    pushType varchar(32) not null,
+    vId varchar(32) null,
     pushStatus int not null comment '1=success, 0=failed',
-    responseMessage varchar(2048),
+    responseMessage varchar(2048) null,
     createdAt datetime not null default current_timestamp,
-    index idx_PushLogTable_uId(uId),
-    index idx_PushLogTable_activityId(activityId)
+    index idx_AndroidPushLogTable_uId(uId),
+    index idx_AndroidPushLogTable_deviceId(deviceId)
 );
+
+
+
 
 
 

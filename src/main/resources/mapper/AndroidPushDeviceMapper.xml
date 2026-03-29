@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.vocabularyassitant.mapper.AndroidPushDeviceMapper">
+
+    <insert id="insertOrUpdate" parameterType="com.vocabularyassitant.entity.AndroidPushDevice">
+        insert into AndroidPushDeviceTable(deviceId, uId, fcmToken, status)
+        values(#{deviceId}, #{uId}, #{fcmToken}, #{status})
+        on duplicate key update
+            uId = values(uId),
+            fcmToken = values(fcmToken),
+            status = values(status),
+            updatedAt = current_timestamp
+    </insert>
+
+    <select id="findAllActiveDevices"
+            resultType="com.vocabularyassitant.entity.AndroidPushDevice">
+        select * from AndroidPushDeviceTable
+        where status = 1
+    </select>
+
+    <select id="findActiveDevicesByUId"
+            parameterType="string"
+            resultType="com.vocabularyassitant.entity.AndroidPushDevice">
+        select * from AndroidPushDeviceTable
+        where uId = #{uId} and status = 1
+    </select>
+
+    <update id="updateLastPushedAt">
+        update AndroidPushDeviceTable
+        set lastPushedAt = #{lastPushedAt}
+        where deviceId = #{deviceId}
+    </update>
+
+    <update id="deactivateByDeviceId">
+        update AndroidPushDeviceTable
+        set status = 0
+        where deviceId = #{deviceId}
+    </update>
+
+</mapper>
