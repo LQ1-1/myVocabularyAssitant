@@ -20,4 +20,5 @@ public interface EnglishVocabularyLearningMapper
     public Integer getAllLearningRecordsCount(@Param("uId") String uId);
 
     public EnglishVocabulary getHighPriorityVocabularyForReview(@Param("uId") String uId);
+    public EnglishVocabulary getRandomLearnedVocabulary(@Param("uId") String uId);
 }

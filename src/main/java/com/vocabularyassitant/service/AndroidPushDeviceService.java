@@ -33,6 +33,10 @@ public class AndroidPushDeviceService {
         return androidPushDeviceMapper.findAllActiveDevices();
     }
 
+    public List<AndroidPushDevice> findDevicesByUId(String uId) {
+        return androidPushDeviceMapper.findDevicesByUId(uId);
+    }
+
     public List<AndroidPushDevice> findActiveDevicesByUId(String uId) {
         return androidPushDeviceMapper.findActiveDevicesByUId(uId);
     }
@@ -40,6 +44,14 @@ public class AndroidPushDeviceService {
     public Integer deactivateByDeviceId(String deviceId) {
         Integer result = androidPushDeviceMapper.deactivateByDeviceId(deviceId);
         log.warn("Deactivated Android push device: deviceId={}, result={}", deviceId, result);
+        return result;
+    }
+
+    public Integer updateStatus(String uId, String deviceId, boolean enabled) {
+        Integer status = enabled ? 1 : 0;
+        Integer result = androidPushDeviceMapper.updateStatusByDeviceIdAndUId(deviceId, uId, status);
+        log.info("Updated Android push device status: uId={}, deviceId={}, enabled={}, result={}",
+                uId, deviceId, enabled, result);
         return result;
     }
 }

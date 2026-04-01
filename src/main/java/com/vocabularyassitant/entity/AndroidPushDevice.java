@@ -13,4 +13,12 @@ public class AndroidPushDevice {
     private LocalDateTime lastPushedAt;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
+
+    public String getuId() {
+        return uId;
+    }
+
+    public void setuId(String uId) {
+        this.uId = uId;
+    }
 }

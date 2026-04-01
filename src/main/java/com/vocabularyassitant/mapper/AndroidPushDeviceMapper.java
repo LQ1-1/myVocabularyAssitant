@@ -13,10 +13,16 @@ public interface AndroidPushDeviceMapper {
 
     List<AndroidPushDevice> findAllActiveDevices();
 
+    List<AndroidPushDevice> findDevicesByUId(@Param("uId") String uId);
+
     List<AndroidPushDevice> findActiveDevicesByUId(@Param("uId") String uId);
 
     Integer updateLastPushedAt(@Param("deviceId") String deviceId,
                                @Param("lastPushedAt") LocalDateTime lastPushedAt);
 
     Integer deactivateByDeviceId(@Param("deviceId") String deviceId);
+
+    Integer updateStatusByDeviceIdAndUId(@Param("deviceId") String deviceId,
+                                         @Param("uId") String uId,
+                                         @Param("status") Integer status);
 }

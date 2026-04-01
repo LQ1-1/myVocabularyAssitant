@@ -1,7 +1,7 @@
 package com.vocabularyassitant.service;
 
-import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.google.auth.oauth2.AccessToken;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.vocabularyassitant.config.FcmProperties;
@@ -99,16 +99,22 @@ public class FcmPushService {
     }
 
     private String buildPayload(String fcmToken, EnglishVocabulary vocabulary) throws IOException {
-        JsonNode payload = objectMapper.createObjectNode()
-                .set("message", objectMapper.createObjectNode()
-                        .put("token", fcmToken)
-                        .set("notification", objectMapper.createObjectNode()
-                                .put("title", "Vocabulary")
-                                .put("body", vocabulary.getvWord() + " - " + vocabulary.getvZh_meaning()))
-                        .set("data", objectMapper.createObjectNode()
-                                .put("vId", vocabulary.getvId())
-                                .put("vWord", vocabulary.getvWord())
-                                .put("vZhMeaning", vocabulary.getvZh_meaning())));
+        ObjectNode notification = objectMapper.createObjectNode();
+        notification.put("title", "Vocabulary");
+        notification.put("body", vocabulary.getvWord() + " - " + vocabulary.getvZh_meaning());
+
+        ObjectNode data = objectMapper.createObjectNode();
+        data.put("vId", vocabulary.getvId());
+        data.put("vWord", vocabulary.getvWord());
+        data.put("vZhMeaning", vocabulary.getvZh_meaning());
+
+        ObjectNode message = objectMapper.createObjectNode();
+        message.put("token", fcmToken);
+        message.set("notification", notification);
+        message.set("data", data);
+
+        ObjectNode payload = objectMapper.createObjectNode();
+        payload.set("message", message);
         return objectMapper.writeValueAsString(payload);
     }
 

@@ -37,4 +37,15 @@
         select ET.*, ELRT.uId, ELRT.lDate, EXP(-0.8 * DATEDIFF(CURDATE(), ELRT.lDate)) as retention_value from EnglishVocabularyLearningRecordsTable ELRT join EnglishVocabularyTable ET on ET.vId = ELRT.vId where EXP(-0.8 * DATEDIFF(CURDATE(), ELRT.lDate)) &lt; 0.4 and ELRT.uId=#{uId} order by retention_value asc limit 1;
     </select>
 
+    <select id="getRandomLearnedVocabulary"
+            parameterType="string"
+            resultType="com.vocabularyassitant.entity.EnglishVocabulary.EnglishVocabulary">
+        select ET.*
+        from EnglishVocabularyLearningRecordsTable ELRT
+                 join EnglishVocabularyTable ET on ET.vId = ELRT.vId
+        where ELRT.uId = #{uId}
+        order by rand()
+        limit 1;
+    </select>
+
 </mapper>

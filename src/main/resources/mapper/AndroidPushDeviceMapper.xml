@@ -20,6 +20,14 @@
         where status = 1
     </select>
 
+    <select id="findDevicesByUId"
+            parameterType="string"
+            resultType="com.vocabularyassitant.entity.AndroidPushDevice">
+        select * from AndroidPushDeviceTable
+        where uId = #{uId}
+        order by updatedAt desc
+    </select>
+
     <select id="findActiveDevicesByUId"
             parameterType="string"
             resultType="com.vocabularyassitant.entity.AndroidPushDevice">
@@ -37,6 +45,14 @@
         update AndroidPushDeviceTable
         set status = 0
         where deviceId = #{deviceId}
+    </update>
+
+    <update id="updateStatusByDeviceIdAndUId">
+        update AndroidPushDeviceTable
+        set status = #{status},
+            updatedAt = current_timestamp
+        where deviceId = #{deviceId}
+          and uId = #{uId}
     </update>
 
 </mapper>

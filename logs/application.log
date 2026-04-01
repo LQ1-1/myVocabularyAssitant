@@ -1,0 +1,149 @@
+2026-04-01 20:29:39.564 INFO  [main] c.v.VocabularyAssitantApplication - Starting VocabularyAssitantApplication using Java 21.0.6 with PID 8518 (/Users/zero/Documents/c_idea_code/VocabularyAssitant/target/classes started by zero in /Users/zero/Documents/c_idea_code/VocabularyAssitant)
+2026-04-01 20:29:39.565 INFO  [main] c.v.VocabularyAssitantApplication - No active profile set, falling back to 1 default profile: "default"
+2026-04-01 20:29:39.939 INFO  [main] o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8082 (http)
+2026-04-01 20:29:39.948 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-0.0.0.0-8082"]
+2026-04-01 20:29:39.949 INFO  [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-04-01 20:29:39.949 INFO  [main] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-04-01 20:29:39.963 INFO  [main] o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 382 ms
+2026-04-01 20:29:40.388 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-0.0.0.0-8082"]
+2026-04-01 20:29:40.392 INFO  [main] o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8082 (http) with context path '/'
+2026-04-01 20:29:40.395 INFO  [main] c.v.VocabularyAssitantApplication - Started VocabularyAssitantApplication in 0.99 seconds (process running for 1.726)
+2026-04-01 20:30:05.889 INFO  [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-04-01 20:30:05.893 INFO  [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-04-01 20:37:21.267 INFO  [main] c.v.VocabularyAssitantApplication - Starting VocabularyAssitantApplication using Java 21.0.6 with PID 9219 (/Users/zero/Documents/c_idea_code/VocabularyAssitant/target/classes started by zero in /Users/zero/Documents/c_idea_code/VocabularyAssitant)
+2026-04-01 20:37:21.268 INFO  [main] c.v.VocabularyAssitantApplication - No active profile set, falling back to 1 default profile: "default"
+2026-04-01 20:37:21.662 INFO  [main] o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8082 (http)
+2026-04-01 20:37:21.667 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-0.0.0.0-8082"]
+2026-04-01 20:37:21.667 INFO  [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-04-01 20:37:21.667 INFO  [main] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-04-01 20:37:21.686 INFO  [main] o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 403 ms
+2026-04-01 20:37:22.122 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-0.0.0.0-8082"]
+2026-04-01 20:37:22.125 INFO  [main] o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8082 (http) with context path '/'
+2026-04-01 20:37:22.129 INFO  [main] c.v.VocabularyAssitantApplication - Started VocabularyAssitantApplication in 1.027 seconds (process running for 1.593)
+2026-04-01 20:37:24.759 INFO  [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-04-01 20:37:24.763 INFO  [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-04-01 20:39:16.900 INFO  [main] c.v.VocabularyAssitantApplication - Starting VocabularyAssitantApplication using Java 21.0.6 with PID 9455 (/Users/zero/Documents/c_idea_code/VocabularyAssitant/target/classes started by zero in /Users/zero/Documents/c_idea_code/VocabularyAssitant)
+2026-04-01 20:39:16.901 INFO  [main] c.v.VocabularyAssitantApplication - No active profile set, falling back to 1 default profile: "default"
+2026-04-01 20:39:17.306 INFO  [main] o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8082 (http)
+2026-04-01 20:39:17.311 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-0.0.0.0-8082"]
+2026-04-01 20:39:17.311 INFO  [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-04-01 20:39:17.311 INFO  [main] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-04-01 20:39:17.329 INFO  [main] o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 412 ms
+2026-04-01 20:39:17.840 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-0.0.0.0-8082"]
+2026-04-01 20:39:17.844 INFO  [main] o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8082 (http) with context path '/'
+2026-04-01 20:39:17.848 INFO  [main] c.v.VocabularyAssitantApplication - Started VocabularyAssitantApplication in 1.117 seconds (process running for 1.626)
+2026-04-01 20:39:17.849 INFO  [main] c.v.VocabularyAssitantApplication - Startup word sampler: begin
+2026-04-01 20:39:17.855 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-04-01 20:39:19.143 INFO  [main] o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-04-01 20:39:19.149 ERROR [main] o.s.boot.SpringApplication - Application run failed
+org.mybatis.spring.MyBatisSystemException: 
+### Error querying database.  Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection
+### The error may exist in file [/Users/zero/Documents/c_idea_code/VocabularyAssitant/target/classes/mapper/EnglishVocabulary/EnglishVocabularyMapper.xml]
+### The error may involve com.vocabularyassitant.mapper.EnglishVocabulary.EnglishVocabularyMapper.getRandomEnglishVocabulary
+### The error occurred while executing a query
+### Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:101)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:362)
+	at jdk.proxy2/jdk.proxy2.$Proxy70.selectOne(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectOne(SqlSessionTemplate.java:169)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:87)
+	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:141)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:86)
+	at jdk.proxy2/jdk.proxy2.$Proxy72.getRandomEnglishVocabulary(Unknown Source)
+	at com.vocabularyassitant.service.EnglishVocabulary.EnglishVocabularyService.getRandomEnglishVocabulary(EnglishVocabularyService.java:24)
+	at com.vocabularyassitant.VocabularyAssitantApplication.lambda$startupWordSampler$0(VocabularyAssitantApplication.java:27)
+	at org.springframework.boot.SpringApplication.lambda$callRunner$1(SpringApplication.java:792)
+	at org.springframework.util.function.ThrowingConsumer$1.acceptWithException(ThrowingConsumer.java:82)
+	at org.springframework.util.function.ThrowingConsumer.accept(ThrowingConsumer.java:60)
+	at org.springframework.util.function.ThrowingConsumer$1.accept(ThrowingConsumer.java:86)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:800)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:791)
+	at org.springframework.boot.SpringApplication.lambda$callRunners$0(SpringApplication.java:776)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)
+	at java.base/java.util.stream.SortedOps$SizedRefSortingSink.end(SortedOps.java:357)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:510)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:776)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:328)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at com.vocabularyassitant.VocabularyAssitantApplication.main(VocabularyAssitantApplication.java:19)
+Caused by: org.apache.ibatis.exceptions.PersistenceException: 
+### Error querying database.  Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection
+### The error may exist in file [/Users/zero/Documents/c_idea_code/VocabularyAssitant/target/classes/mapper/EnglishVocabulary/EnglishVocabularyMapper.xml]
+### The error may involve com.vocabularyassitant.mapper.EnglishVocabulary.EnglishVocabularyMapper.getRandomEnglishVocabulary
+### The error occurred while executing a query
+### Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection
+	at org.apache.ibatis.exceptions.ExceptionFactory.wrapException(ExceptionFactory.java:30)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:156)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:142)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectOne(DefaultSqlSession.java:75)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:348)
+	... 28 common frames omitted
+Caused by: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:84)
+	at org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:83)
+	at org.mybatis.spring.transaction.SpringManagedTransaction.getConnection(SpringManagedTransaction.java:70)
+	at org.apache.ibatis.executor.BaseExecutor.getConnection(BaseExecutor.java:348)
+	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:89)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:64)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:336)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:158)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:110)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:90)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:154)
+	... 34 common frames omitted
+Caused by: java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: NO)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:840)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:416)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:237)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:180)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:373)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:210)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:576)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:97)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:111)
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:160)
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:118)
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:81)
+	... 44 common frames omitted
+2026-04-01 20:39:19.153 INFO  [main] o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-04-01 20:39:19.157 INFO  [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-04-01 20:41:19.341 INFO  [main] c.v.VocabularyAssitantApplication - Starting VocabularyAssitantApplication using Java 21.0.6 with PID 9650 (/Users/zero/Documents/c_idea_code/VocabularyAssitant/target/classes started by zero in /Users/zero/Documents/c_idea_code/VocabularyAssitant)
+2026-04-01 20:41:19.342 INFO  [main] c.v.VocabularyAssitantApplication - No active profile set, falling back to 1 default profile: "default"
+2026-04-01 20:41:19.736 INFO  [main] o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8082 (http)
+2026-04-01 20:41:19.744 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-0.0.0.0-8082"]
+2026-04-01 20:41:19.745 INFO  [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-04-01 20:41:19.745 INFO  [main] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-04-01 20:41:19.759 INFO  [main] o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 402 ms
+2026-04-01 20:41:20.203 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-0.0.0.0-8082"]
+2026-04-01 20:41:20.207 INFO  [main] o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8082 (http) with context path '/'
+2026-04-01 20:41:20.210 INFO  [main] c.v.VocabularyAssitantApplication - Started VocabularyAssitantApplication in 1.032 seconds (process running for 1.581)
+2026-04-01 20:41:20.211 INFO  [main] c.v.VocabularyAssitantApplication - Startup word sampler: begin
+2026-04-01 20:41:20.217 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-04-01 20:41:20.284 INFO  [main] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@52290e63
+2026-04-01 20:41:20.285 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-04-01 20:41:20.317 INFO  [main] c.v.VocabularyAssitantApplication - Startup word sampler: sampleIndex=1, vId=
+2578, vWord=extinction, vZhMeaning=n. 灭绝；消失；消灭；废止
+2026-04-01 20:41:20.324 INFO  [main] c.v.VocabularyAssitantApplication - Startup word sampler: sampleIndex=2, vId=
+3696, vWord=hilarious, vZhMeaning=adj. 欢闹的；非常滑稽的；喜不自禁的
+2026-04-01 20:41:20.332 INFO  [main] c.v.VocabularyAssitantApplication - Startup word sampler: sampleIndex=3, vId=
+2387, vWord=lengthy, vZhMeaning=adj. 漫长的，冗长的；啰唆的
+2026-04-01 20:41:20.332 INFO  [main] c.v.VocabularyAssitantApplication - Startup word sampler: end
+2026-04-01 20:41:31.359 INFO  [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-04-01 20:41:31.365 INFO  [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-04-01 20:41:31.368 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-04-01 20:41:31.370 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.

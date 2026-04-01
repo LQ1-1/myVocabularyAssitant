@@ -4,6 +4,8 @@ import com.vocabularyassitant.entity.EnglishVocabulary.EnglishVocabulary;
 import com.vocabularyassitant.service.EnglishVocabulary.EnglishVocabularyService;
 import org.springframework.stereotype.Service;
 
+import java.util.concurrent.ThreadLocalRandom;
+
 @Service
 public class WordPushService {
     private final EnglishVocabularyService englishVocabularyService;
@@ -13,14 +15,29 @@ public class WordPushService {
     }
 
     public EnglishVocabulary pickWordForUser(String uId) {
-        EnglishVocabulary vocabulary = englishVocabularyService.learnNewEnglishVocabulary(uId);
-        if (vocabulary != null) {
-            return vocabulary;
+        EnglishVocabulary newVocabulary = englishVocabularyService.learnNewEnglishVocabulary(uId);
+        EnglishVocabulary reviewVocabulary = pickReviewWord(uId);
+
+        if (newVocabulary == null) {
+            return reviewVocabulary;
         }
-        return englishVocabularyService.getRandomEnglishVocabulary();
+
+        if (reviewVocabulary == null) {
+            return newVocabulary;
+        }
+
+        return ThreadLocalRandom.current().nextBoolean() ? newVocabulary : reviewVocabulary;
     }
 
     public EnglishVocabulary pickNextWord(String uId) {
         return pickWordForUser(uId);
+    }
+
+    private EnglishVocabulary pickReviewWord(String uId) {
+        EnglishVocabulary reviewVocabulary = englishVocabularyService.getHighPriorityVocabularyForReview(uId);
+        if (reviewVocabulary != null) {
+            return reviewVocabulary;
+        }
+        return englishVocabularyService.getRandomLearnedVocabulary(uId);
     }
 }

@@ -1,6 +1,7 @@
 package com.vocabularyassitant.controller;
 
 import com.vocabularyassitant.dto.RegisterAndroidPushTokenRequest;
+import com.vocabularyassitant.dto.UpdateAndroidPushStatusRequest;
 import com.vocabularyassitant.entity.AndroidPushDevice;
 import com.vocabularyassitant.entity.EnglishVocabulary.EnglishVocabulary;
 import com.vocabularyassitant.result.Result;
@@ -56,6 +57,35 @@ public class AndroidPushController {
         log.info("Registering Android push token: uId={}, deviceId={}", uId, request.getDeviceId());
         Integer result = androidPushDeviceService.registerDevice(uId, request.getDeviceId(), request.getFcmToken());
         return Result.success(result);
+    }
+
+    @PostMapping("/update-status")
+    public Result updateStatus(@RequestBody UpdateAndroidPushStatusRequest request,
+                               @AuthenticationPrincipal Jwt jwt) {
+        if (jwt == null) {
+            log.warn("Rejected Android push status update because JWT is missing");
+            return Result.fail("Unauthorized");
+        }
+        if (!StringUtils.hasText(request.getDeviceId()) || request.getEnabled() == null) {
+            log.warn("Rejected Android push status update because request is incomplete: uId={}", jwt.getSubject());
+            return Result.fail("deviceId and enabled are required");
+        }
+
+        String uId = jwt.getSubject();
+        Integer result = androidPushDeviceService.updateStatus(uId, request.getDeviceId(), request.getEnabled());
+        if (result == null || result == 0) {
+            log.warn("Android push status update skipped because device was not found: uId={}, deviceId={}",
+                    uId, request.getDeviceId());
+            return Result.fail("Device not found");
+        }
+
+        Map<String, Object> data = new HashMap<>();
+        data.put("uId", uId);
+        data.put("deviceId", request.getDeviceId());
+        data.put("enabled", request.getEnabled());
+        log.info("Updated Android push status: uId={}, deviceId={}, enabled={}",
+                uId, request.getDeviceId(), request.getEnabled());
+        return Result.success(data);
     }
 
     @PostMapping("/push-test-word")
@@ -115,6 +145,6 @@ public class AndroidPushController {
             return Result.fail("Unauthorized");
         }
         log.info("Querying registered Android devices: uId={}", jwt.getSubject());
-        return Result.success(androidPushDeviceService.findActiveDevicesByUId(jwt.getSubject()));
+        return Result.success(androidPushDeviceService.findDevicesByUId(jwt.getSubject()));
     }
 }
